@@ -1,1 +1,7 @@
-/GsbRapports
+/GsbRapports/dllRapportVisites
+/GsbRapports/packages
+/GsbRapports/GsbRapports/bin
+/GsbRapports/GsbRapports/obj
+/GsbRapports/GsbRapports/Properties
+
+*.vs
