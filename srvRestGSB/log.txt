@@ -1,0 +1,6 @@
+Array
+(
+    [ADIMOL9] => 2
+    [TXISOL22] => 3
+)
+2
