@@ -116,5 +116,23 @@ namespace GsbRapports
             ajoutFamilleWindow w = new ajoutFamilleWindow();
             w.Show();
         }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            voirVisiteursWindow w = new voirVisiteursWindow(wb, site, laSecretaire);
+            w.Show();
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            majVisiteurWindow w = new majVisiteurWindow(wb, site, laSecretaire);
+            w.Show();
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            ajoutVisiteurWindow w = new ajoutVisiteurWindow();
+            w.Show();
+        }
     }
 }

@@ -18,11 +18,13 @@
                 <MenuItem Header="_Visites">
 
                 </MenuItem>
-                <MenuItem Header="_médicaments">
+                <MenuItem Header="_Médicaments">
 
                 </MenuItem>
-                <MenuItem Header="_visiteurs">
-
+                <MenuItem Header="_Visiteurs">
+                    <MenuItem Header="_Voir" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="_Modifier" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Ajouter" Click="MenuItem_Click_5"/>
                 </MenuItem>
                 <MenuItem Header="_Familles">
                     <MenuItem Header="_Voir" Click="MenuItem_Click"/>
