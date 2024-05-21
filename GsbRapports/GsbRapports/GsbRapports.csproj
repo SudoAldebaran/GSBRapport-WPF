@@ -71,6 +71,9 @@
     <Compile Include="majVisiteurWindow.xaml.cs">
       <DependentUpon>majVisiteurWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="rapportsVisiteurs.xaml.cs">
+      <DependentUpon>rapportsVisiteurs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VoirFamillesWindow.xaml.cs">
       <DependentUpon>VoirFamillesWindow.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="majVisiteurWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="rapportsVisiteurs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

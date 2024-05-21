@@ -7,10 +7,6 @@
         mc:Ignorable="d"
         Title="GSB gestion des rapports de visites" Height="450" Width="800" Icon="gsb.jpg" HorizontalAlignment="Center">
 
-    <Window.Resources>
-        <ImageBrush x:Key="wallpaperImage" ImageSource="wallpaperLogin.jpg"/>
-    </Window.Resources>
-
     <Grid>
         <StackPanel Background="LightBlue">
             <StackPanel>
@@ -32,6 +28,7 @@
                             <MenuItem Header="_Voir" Click="MenuItem_Click_3"/>
                             <MenuItem Header="_Modifier" Click="MenuItem_Click_4"/>
                             <MenuItem Header="_Ajouter" Click="MenuItem_Click_5"/>
+                            <MenuItem Header="_Rapports" Click="MenuItem_Click_6"/>
                         </MenuItem>
                         <MenuItem Header="_Familles">
                             <MenuItem Header="_Voir" Click="MenuItem_Click"/>
