@@ -7,18 +7,41 @@
         mc:Ignorable="d"
         Title="ajoutVisiteurWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="0,50,0,0" >
-            <StackPanel Orientation="Horizontal" Margin="30,0,0,0">
-                <TextBlock Text="Id" Width="30"/>
-                <TextBox x:Name="txtId" Margin="50,0,0,0" Width="50"/>
-
+        <StackPanel Background="LightBlue">
+            <StackPanel>
+                <TextBlock Text="Ajout d'un visiteur" FontSize="20" FontFamily="Times New Roman" Foreground="White" HorizontalAlignment="Center"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Libellé" Margin="30,0,0,0"/>
-                <TextBox x:Name="txtLibelle" Margin="50,0,0,0" Width="60"/>
-
+            <StackPanel Orientation="Horizontal" Margin="0,30,0,10" HorizontalAlignment="Center">
+                <TextBlock Text="idVisiteur" Width="100"/>
+                <TextBox x:Name="txtIdVisiteur" Margin="50,0,0,0" Width="100"/>
             </StackPanel>
-            <Button x:Name="btnValider" Content="Ajouter" Width="50" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
+                <TextBlock Text="Nom" Width="100"/>
+                <TextBox x:Name="txtNomVisiteur" Margin="50,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
+                <TextBlock Text="Prénom" Width="100"/>
+                <TextBox x:Name="txtPrenomVisiteur" Margin="50,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
+                <TextBlock Text="Adresse" Width="100"/>
+                <TextBox x:Name="txtAdresseVisiteur" Margin="50,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
+                <TextBlock Text="Ville" Width="100"/>
+                <TextBox x:Name="txtVilleVisiteur" Margin="50,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
+                <TextBlock Text="Code Postal" Width="100"/>
+                <TextBox x:Name="txtCpVisiteur" Margin="50,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center">
+                <TextBlock Text="Date d'embauche" Width="100"/>
+                <TextBox x:Name="txtDateVisiteur" Margin="50,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="btnValider" Margin="0, 20, 0, 0" Content="Ajouter" Width="250" HorizontalAlignment="Center" Click="btnValider_Click"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

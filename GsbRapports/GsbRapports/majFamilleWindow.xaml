@@ -7,18 +7,23 @@
         mc:Ignorable="d"
         Title="Mise à jour des familles" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="0,50,0,0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <TextBlock Text="Les Familles" Margin="50,0,0,0"/>
-                <ComboBox x:Name="cmbFamille" Margin="30,0,0,0" Width="100"></ComboBox>
-                
+        <StackPanel Background="LightBlue">
+            <StackPanel Margin="0,50,0,0" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 10">
+                    <TextBlock Text="Les Familles" Margin="0,0,0,0"/>
+                    <ComboBox x:Name="cmbFamille" Margin="30,0,0,0" Width="200"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock Text="Famille à mettre à jour"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBox x:Name="txtLibFamille" Margin="30,0,0,0" Width="200"
+ DataContext="{Binding ElementName =cmbFamille,  Path=SelectedItem}" Text="{Binding  libelle}" />
+                    </StackPanel>
+                    </StackPanel>
+                <Button x:Name="btnValider" Content="Valider" Margin="0,50,0,0" Width="100" Click="btnValider_Click"/>
             </StackPanel>
-            <TextBox x:Name="txtLibFamille" Margin="100,50,0,0" Width="300" HorizontalAlignment="Center"
-                     
-                     DataContext="{Binding ElementName =cmbFamille,  Path=SelectedItem}" Text="{Binding  libelle}" />
-            <Button x:Name="btnValider" Content="Valider" Margin="0,100,0,0" Width="100" Click="btnValider_Click"/>
-
-
         </StackPanel>
     </Grid>
 </Window>

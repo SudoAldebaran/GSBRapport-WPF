@@ -132,7 +132,7 @@ namespace GsbRapports
 
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
-            ajoutVisiteurWindow w = new ajoutVisiteurWindow();
+            ajoutVisiteurWindow w = new ajoutVisiteurWindow(wb, site, laSecretaire);
             w.Show();
         }
     }
