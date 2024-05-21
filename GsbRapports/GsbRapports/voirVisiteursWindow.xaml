@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="voirVisiteursWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtgVisiteurs"/>
+        <StackPanel Background="LightBlue">
+            <DataGrid x:Name="dtgVisiteurs"/>
+        </StackPanel>
     </Grid>
 </Window>

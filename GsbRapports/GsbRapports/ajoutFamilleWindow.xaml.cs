@@ -1,6 +1,10 @@
-﻿using System;
+﻿using dllRapportVisites;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,12 +23,55 @@ namespace GsbRapports
     /// </summary>
     public partial class ajoutFamilleWindow : Window
     {
-        public ajoutFamilleWindow()
+        private WebClient wb;
+        private string site;
+        private Secretaire laSecretaire;
+        public ajoutFamilleWindow(WebClient wb, string site, Secretaire laSecretaire)
         {
             InitializeComponent();
+            this.wb = wb;
+            this.site = site;
+            this.laSecretaire = laSecretaire;
+            
 
-            this.DataContext = this;
+            //this.DataContext = this;
+        }
+        
 
+        private async void btnValider_Click(object sender, RoutedEventArgs e)
+        {
+            // Verif du texte saisi ==> je ne veux ni espace ni vide 
+            if (this.txtLibFamille.Text.Length <= 2 || this.txtLibFamille.Text.Length > 30)
+            {
+                // msg erreur si champs vide
+                MessageBox.Show("Veuillez saisir un nom de famille contenant 3 à 30 lettres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Verif de la correspondance de la première lettre de l'ID avec la première lettre du libellé
+            if (this.txtLibFamille.Text[0] != this.txtIdFamille.Text[0]  )
+            {
+                MessageBox.Show("La première lettre de l'ID ne correspond pas à la première lettre du libellé.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                return;
+            }
+
+            // sinon si tout est okay : 
+
+            string hash = this.laSecretaire.getHashTicketMdp();
+            string url = this.site + "familles";
+            NameValueCollection parametre = new NameValueCollection();
+            parametre.Add("ticket", hash);
+            parametre.Add("idFamille", this.txtIdFamille.Text);
+            parametre.Add("libelle", this.txtLibFamille.Text);
+            byte[] tab = await wb.UploadValuesTaskAsync(url, "POST", parametre);
+            string reponse = UnicodeEncoding.UTF8.GetString(tab);
+            string ticket = reponse.Substring(2, reponse.Length - 2);
+            this.laSecretaire.ticket = ticket;
+
+
+            MessageBox.Show("Famille ajoutée avec succès !");
+
+            this.Close();
 
         }
     }

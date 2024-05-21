@@ -57,13 +57,21 @@ namespace GsbRapports
                 MessageBox.Show("Veuillez saisir une ville contenant 3 à 30 lettres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            // Verif de la correspondance de la première lettre de l'ID avec la première lettre du libellé
-            if (((Visiteur)this.cmbVisiteurs.SelectedItem).id[0] != txtVilleVisiteur.Text[0])
-            {
-                MessageBox.Show("La première lettre de l'ID ne correspond pas à la première lettre du libellé.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
 
+            if (this.txtAdrVisiteur.Text.Length <= 2 || this.txtAdrVisiteur.Text.Length > 30)
+            {
+                // msg erreur si champs vide
+                MessageBox.Show("Veuillez saisir une adresse contenant 3 à 30 lettres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
+            if (this.txtCpVisiteur.Text.Length != 5) // CODE POSTAL DOIT FAIRE 5 CHIFFRES
+            {
+                // msg erreur si champs vide
+                MessageBox.Show("Veuillez saisir un code postal à 5 chiffres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
 
             // sinon si tout est okay : 
 

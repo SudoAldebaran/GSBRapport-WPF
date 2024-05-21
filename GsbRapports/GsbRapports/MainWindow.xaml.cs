@@ -36,9 +36,10 @@ namespace GsbRapports
             this.site = ConfigurationManager.AppSettings.Get("srvLocal");
             this.laSecretaire = new Secretaire();
 
+            
             this.DckMenu.Visibility= Visibility.Hidden;
             this.imgLogo.Visibility = Visibility.Hidden;
-            this.txtBonjour.Visibility = Visibility.Hidden; 
+            this.txtBonjour.Visibility = Visibility.Hidden;
 
         }
 
@@ -113,7 +114,7 @@ namespace GsbRapports
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-            ajoutFamilleWindow w = new ajoutFamilleWindow();
+            ajoutFamilleWindow w = new ajoutFamilleWindow(wb, site, laSecretaire);
             w.Show();
         }
 

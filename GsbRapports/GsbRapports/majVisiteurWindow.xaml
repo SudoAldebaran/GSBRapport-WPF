@@ -7,30 +7,33 @@
         mc:Ignorable="d"
         Title="majVisiteurWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="20">
-                <TextBlock Text="Les visiteurs" Margin="50, 0, 0, 0"/>
-                <ComboBox x:Name="cmbVisiteurs" Width="100" Margin="30, 0, 0, 0"/>
+        <StackPanel Background="LightBlue">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Mise à jour d'un visiteur" Foreground="White" FontSize="20" FontFamily="Times New Roman" Margin="290,10,0,10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Les visiteurs" Margin="140, 10, 0, 10"/>
+                <ComboBox x:Name="cmbVisiteurs" Width="300" Margin="30, 10, 0, 10"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="70, 0, 0, 0">
                 <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Ville"/>
-                <TextBox Width="300" x:Name="txtVilleVisiteur" Margin="70, 0, 0, 0"
+                <TextBlock Text="Ville" Margin="70, 10, 0, 10"/>
+                <TextBox Width="300" x:Name="txtVilleVisiteur" Margin="70, 10, 0, 10"
            DataContext="{Binding ElementName=cmbVisiteurs, Path=SelectedItem}" Text="{Binding ville}"/>
                  </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Adresse"/>
-                    <TextBox Width="300" x:Name="txtAdrVisiteur" Margin="50, 0, 0, 0"
+                    <TextBlock Text="Adresse" Margin="70, 10, 0, 10"/>
+                    <TextBox Width="300" x:Name="txtAdrVisiteur" Margin="50, 10, 0, 10"
            DataContext="{Binding ElementName=cmbVisiteurs, Path=SelectedItem}" Text="{Binding adresse}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Code Postal"/>
-                    <TextBox Width="300" x:Name="txtCpVisiteur" Margin="30, 0, 0, 0"
+                    <TextBlock Text="Code Postal" Margin="70, 10, 0, 10"/>
+                    <TextBox Width="300" x:Name="txtCpVisiteur" Margin="30, 10, 0, 10"
            DataContext="{Binding ElementName=cmbVisiteurs, Path=SelectedItem}" Text="{Binding cp}"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="btnValider" Content="Valider" Margin="200, 30 , 0, 0" Width="200" Click="btnValider_Click"/>
+                <Button x:Name="btnValider" Content="Valider" Margin="280, 30 , 0, 30" Width="200" Click="btnValider_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
