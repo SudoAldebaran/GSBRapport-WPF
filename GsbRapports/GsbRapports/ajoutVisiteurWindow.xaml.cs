@@ -130,7 +130,7 @@ namespace GsbRapports
             parametre.Add("prenom", this.txtPrenomVisiteur.Text);
             parametre.Add("ville", this.txtVilleVisiteur.Text);
             parametre.Add("adresse", this.txtAdresseVisiteur.Text);
-            parametre.Add("cp", this.txtDateVisiteur.Text);
+            parametre.Add("cp", this.txtCpVisiteur.Text);
             parametre.Add("dateEmbauche", this.txtDateVisiteur.Text);
             byte[] tab = await wb.UploadValuesTaskAsync(url, "POST", parametre);
             string reponse = UnicodeEncoding.UTF8.GetString(tab);

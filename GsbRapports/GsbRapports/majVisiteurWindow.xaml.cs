@@ -44,7 +44,7 @@ namespace GsbRapports
             string lesVisiteurs = d.visiteurs.ToString();
             List<Visiteur> list = JsonConvert.DeserializeObject<List<Visiteur>>(lesVisiteurs);
             this.cmbVisiteurs.ItemsSource = list;
-            this.cmbVisiteurs.DisplayMemberPath = "id";
+            this.cmbVisiteurs.DisplayMemberPath = "NomPrenom";
 
         }
 
@@ -89,7 +89,7 @@ namespace GsbRapports
             this.laSecretaire.ticket = ticket;
 
 
-            MessageBox.Show("Famille modifiée avec succès !");
+            MessageBox.Show("Visiteur modifié avec succès !");
 
             this.Close();
 
