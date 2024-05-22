@@ -7,8 +7,31 @@
         mc:Ignorable="d"
         Title="rapportsVisiteurs" Height="450" Width="800">
     <Grid>
+        
         <StackPanel Background="LightBlue">
-            
+            <StackPanel Margin="0, 20,0,0">
+                <TextBlock Text="Rapports d'un visiteur" HorizontalAlignment="Center" FontSize="20" FontFamily="Times New Roman" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Les visiteurs" Margin="0, 20, 0, 20"/>
+                <ComboBox x:Name="cmbVisiteurs" Width="300" Margin="30,20, 0, 20"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Sélectionnez 2 dates" Foreground="White" FontSize="17"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0,30,0,0" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="1ere date" Margin="0,0,0,0"/>
+                    <TextBox x:Name="date1" Margin="30,0,30,0" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="2eme date" Margin="0,0,0,0"/>
+                    <TextBox x:Name="date2" Margin="30,0,0,0" Width="150"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="0,30,0,0">
+                <Button Content="Valider" Width="200" Click="Button_Click"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
