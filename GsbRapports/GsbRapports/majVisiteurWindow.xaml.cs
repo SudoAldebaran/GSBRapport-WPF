@@ -73,7 +73,7 @@ namespace GsbRapports
             }
 
 
-            // sinon si tout est okay : 
+            // sinon si tout est okay :
 
             string hash = this.laSecretaire.getHashTicketMdp();
             string url = this.site + "visiteur";
