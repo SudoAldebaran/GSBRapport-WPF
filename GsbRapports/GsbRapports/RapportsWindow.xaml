@@ -1,0 +1,19 @@
+﻿<Window x:Class="GsbRapports.RapportsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GsbRapports"
+        mc:Ignorable="d"
+        Title="Rapports de Visiteur" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Rapports du visiteur" FontSize="20" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"/>
+        <DataGrid x:Name="dtgRapports" Margin="10" AutoGenerateColumns="True" Grid.Row="1" VerticalScrollBarVisibility="Auto"/>
+        <Button Content="Exporter en XML" Margin="10" Width="150" HorizontalAlignment="Center" Grid.Row="2" Click="ExportToXML_Click"/>
+    </Grid>
+</Window>

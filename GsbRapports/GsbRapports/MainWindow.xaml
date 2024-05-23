@@ -5,63 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GsbRapports"
         mc:Ignorable="d"
-        Title="GSB gestion des rapports de visites" Height="450" Width="800" Icon="gsb.jpg" HorizontalAlignment="Center">
-
-    <Grid>
-        <StackPanel Background="LightBlue">
-            <StackPanel>
-                <DockPanel>
-                    <Menu DockPanel.Dock="Top" x:Name="DckMenu" >
-                        <MenuItem Header="_Fichier">
-                            <MenuItem Header="_Quitter"/>
-                        </MenuItem>
-                        <MenuItem Header="_Médecins">
-
-                        </MenuItem>
-                        <MenuItem Header="_Visites">
-
-                        </MenuItem>
-                        <MenuItem Header="_Médicaments">
-
-                        </MenuItem>
-                        <MenuItem Header="_Visiteurs">
-                            <MenuItem Header="_Voir" Click="MenuItem_Click_3"/>
-                            <MenuItem Header="_Modifier" Click="MenuItem_Click_4"/>
-                            <MenuItem Header="_Ajouter" Click="MenuItem_Click_5"/>
-                            <MenuItem Header="_Rapports" Click="MenuItem_Click_6"/>
-                        </MenuItem>
-                        <MenuItem Header="_Familles">
-                            <MenuItem Header="_Voir" Click="MenuItem_Click"/>
-                            <MenuItem Header="_Modifier" Click="MenuItem_Click_1" />
-                            <MenuItem Header="_Ajouter" Click="MenuItem_Click_2" />
-                        </MenuItem>
-
-                    </Menu>
-
-
-
-                </DockPanel>
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBox x:Name="txtBonjour" Width="150" Height="30" Margin="50,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Beige"/>
-                <StackPanel  Orientation ="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <StackPanel Height="100" x:Name="stPanel">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Login" Margin="20,0,0,0"/>
-                            <TextBox x:Name ="txtLogin" Width="50" Margin="60,0,0,0"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Mot de passe" Margin="20,0,0,0"/>
-                            <PasswordBox x:Name ="txtMdp" Width="50" Margin="20,0,0,0"/>
-                            <Button x:Name="btnValider" Margin="30,0,0,0" Width="50" Content="Valider" Click="btnValider_Click"/>
-                        </StackPanel>
-
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical">
-                        <Image Height="200" Width="241" Source="gsb.jpg" x:Name="imgLogo" HorizontalAlignment="Right"/>
-                    </StackPanel>
+        Title="GSB gestion des rapports de visites" Height="450" Width="800" Icon="gsb.jpg" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" x:Name="DckMenu" Visibility="Collapsed">
+                <MenuItem Header="_Fichier">
+                    <MenuItem Header="_Quitter" Click="MenuItem_Quitter_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Médecins"/>
+                <MenuItem Header="_Visites"/>
+                <MenuItem Header="_Médicaments"/>
+                <MenuItem Header="_Visiteurs">
+                    <MenuItem Header="_Voir" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="_Modifier" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Ajouter" Click="MenuItem_Click_5"/>
+                    <MenuItem Header="_Rapports" Click="MenuItem_Click_6"/>
+                </MenuItem>
+                <MenuItem Header="_Familles">
+                    <MenuItem Header="_Voir" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Modifier" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="_Ajouter" Click="MenuItem_Click_2"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+            <TextBlock x:Name="txtConnexion" Text="Connexion" FontSize="30" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center" Foreground="White"/>
+            <StackPanel x:Name="loginPanel" Background="White" Width="300">
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Login" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtLogin" Width="200" Height="30"/>
                 </StackPanel>
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Mot de passe" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <PasswordBox x:Name="txtMdp" Width="200" Height="30"/>
+                </StackPanel>
+                <Button x:Name="btnValider" Width="200" Height="30" Content="Valider" Click="btnValider_Click"/>
             </StackPanel>
+            <Image x:Name="imgLogo" Height="100" Width="120" Source="gsb.jpg" Margin="20" Visibility="Collapsed"/>
+            <TextBox x:Name="txtBonjour" Width="300" Height="30" Margin="20,0,0,0" Background="Beige" HorizontalAlignment="Center" Visibility="Collapsed"/>
         </StackPanel>
     </Grid>
 </Window>

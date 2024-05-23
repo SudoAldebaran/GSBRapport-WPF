@@ -2,19 +2,9 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GsbRapports
 {
@@ -26,6 +16,7 @@ namespace GsbRapports
         private WebClient wb;
         private string site;
         private Secretaire laSecretaire;
+
         public rapportsVisiteurs(WebClient wb, string site, Secretaire laSecretaire)
         {
             InitializeComponent();
@@ -34,6 +25,7 @@ namespace GsbRapports
             this.laSecretaire = laSecretaire;
             getVisiteurs();
         }
+
         private async void getVisiteurs()
         {
             string hash = this.laSecretaire.getHashTicketMdp();
@@ -49,24 +41,46 @@ namespace GsbRapports
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Vérifier que les dates et le visiteur sont sélectionnés
+            if (this.cmbVisiteurs.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un visiteur.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(this.date1.Text) || string.IsNullOrWhiteSpace(this.date2.Text))
+            {
+                MessageBox.Show("Veuillez saisir les deux dates.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            DateTime dateDebut, dateFin;
+            if (!DateTime.TryParse(this.date1.Text, out dateDebut) || !DateTime.TryParse(this.date2.Text, out dateFin))
+            {
+                MessageBox.Show("Veuillez saisir des dates valides.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Récupérer l'ID du visiteur sélectionné
+            Visiteur visiteurSelectionne = (Visiteur)this.cmbVisiteurs.SelectedItem;
+            string idVisiteur = visiteurSelectionne.id;
+
+            // Faire la requête pour obtenir les rapports
             string hash = this.laSecretaire.getHashTicketMdp();
-            string url = this.site + "rapports";
-            NameValueCollection parametre = new NameValueCollection();
-            parametre.Add("ticket", hash);
-            parametre.Add("dateDebut", this.date1.Text);
-            parametre.Add("dateFin", this.date2.Text);
-            parametre.Add("idVisiteur", ((Visiteur)this.cmbVisiteurs.SelectedItem).id);
-            byte[] tab = await wb.UploadValuesTaskAsync(url, "GET", parametre);
-            string reponse = UnicodeEncoding.UTF8.GetString(tab);
-            string ticket = reponse.Substring(2, reponse.Length - 2);
-            this.laSecretaire.ticket = ticket;
+            string url = this.site + $"rapports?ticket={hash}&idVisiteur={idVisiteur}&dateDebut={dateDebut:yyyy-MM-dd}&dateFin={dateFin:yyyy-MM-dd}";
+            string reponse = await this.wb.DownloadStringTaskAsync(url);
+            dynamic d = JsonConvert.DeserializeObject(reponse);
+            this.laSecretaire.ticket = d.ticket;
+            string lesRapports = d.rapports.ToString();
+            List<Rapport> rapports = JsonConvert.DeserializeObject<List<Rapport>>(lesRapports);
 
+            // Ouvrir la nouvelle fenêtre avec les rapports
+            string visiteurNomPrenom = ((Visiteur)this.cmbVisiteurs.SelectedItem).NomPrenom;
+            RapportsWindow rapportsWindow = new RapportsWindow(rapports, visiteurNomPrenom);
+            rapportsWindow.Show();
 
-            MessageBox.Show("Famille modifiée avec succès !");
-
-            this.Close();
+            // Facultatif : Fermer la fenêtre actuelle
+            // this.Close();
         }
-
-
     }
 }

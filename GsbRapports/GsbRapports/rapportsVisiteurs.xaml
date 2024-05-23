@@ -16,7 +16,7 @@
                 <ComboBox x:Name="cmbVisiteurs" Width="300" Margin="30,20, 0, 20"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center">
-                <TextBlock Text="Sélectionnez 2 dates" Foreground="White" FontSize="17"/>
+                <TextBlock Text="Sélectionnez 2 dates (AAAA-MM-JJ)" Foreground="White" FontSize="17"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,30,0,0" Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal">
