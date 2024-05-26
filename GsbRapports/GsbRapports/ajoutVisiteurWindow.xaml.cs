@@ -115,7 +115,7 @@ namespace GsbRapports
             // ---------------------------------------- DATE EMBAUCHE ------------------------------------------//
             if (!Regex.IsMatch(this.txtDateVisiteur.Text, @"^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"))
             {
-                MessageBox.Show("CODE POSTAL : Veuillez ne saisir que des chiffres, et un format de date adapté sous forme : AAAA-MM-JJ");
+                MessageBox.Show("DATE D'EMBAUCHE : Veuillez ne saisir que des chiffres, et un format de date adapté sous forme : AAAA-MM-JJ");
                 return;
             }
 
