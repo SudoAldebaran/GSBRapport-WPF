@@ -20,6 +20,7 @@
                     <MenuItem Header="_Modifier" Click="MenuItem_Click_4"/>
                     <MenuItem Header="_Ajouter" Click="MenuItem_Click_5"/>
                     <MenuItem Header="_Rapports" Click="MenuItem_Click_6"/>
+                    <MenuItem Header="_Recherche rapports par visiteurs (nom)" Click="MenuItem_Click_7"/>
                 </MenuItem>
                 <MenuItem Header="_Familles">
                     <MenuItem Header="_Voir" Click="MenuItem_Click"/>

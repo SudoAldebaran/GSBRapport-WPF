@@ -122,5 +122,11 @@ namespace GsbRapports
             rapportsVisiteurs w = new rapportsVisiteurs(wb, site, laSecretaire);
             w.Show();
         }
+
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+            rechercheRapportsVisiteurs w = new rechercheRapportsVisiteurs(wb, site, laSecretaire);
+            w.Show();
+        }
     }
 }

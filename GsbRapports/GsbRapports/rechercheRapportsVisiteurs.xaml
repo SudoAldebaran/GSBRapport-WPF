@@ -1,0 +1,35 @@
+﻿<Window x:Class="GsbRapports.rechercheRapportsVisiteurs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GsbRapports"
+        mc:Ignorable="d"
+        Title="rechercheRapportsVisiteurs" Height="450" Width="800">
+    <Grid>
+        <StackPanel Background="LightBlue">
+            <StackPanel Margin="0, 20,0,0">
+                <TextBlock Text="Recherche de rapports par nom du visiteur" HorizontalAlignment="Center" FontSize="20" FontFamily="Times New Roman" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+                <TextBlock Text="Recherche"/>
+                <TextBox x:Name="txtNomVisiteur" Width="200" Margin="15, 0, 0, 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+                <Button Content="Rechercher" Width="200" Margin="15, 0, 0, 0" Click="Button_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Les visiteurs" Margin="0, 20, 0, 20"/>
+                <ComboBox x:Name="cmbVisiteurs" Width="300" Margin="30,20, 0, 20"/>
+            </StackPanel>
+            <StackPanel Margin="0,15,0,0">
+                <Button Content="Afficher les rapports" Width="200" Click="Button_Click_1"/>
+            </StackPanel>
+            <StackPanel Margin="0, 20, 0, 0">
+                <DataGrid x:Name="dtgVisiteursR" AutoGenerateColumns="True">
+                    
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
