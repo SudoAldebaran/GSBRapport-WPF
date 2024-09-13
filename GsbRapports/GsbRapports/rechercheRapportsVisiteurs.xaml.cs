@@ -44,7 +44,7 @@ namespace GsbRapports
         {
             string recherche = txtNomVisiteur.Text;
 
-            if (recherche.Length >= 2)
+            if (recherche.Length >= 2) // TEXTE SUPERIEUR A 2 CARACTERES
             {
                 var filteredList = visiteurs.Where(v => v.NomPrenom.StartsWith(recherche, StringComparison.InvariantCultureIgnoreCase)).ToList();
                 cmbVisiteurs.ItemsSource = filteredList;
